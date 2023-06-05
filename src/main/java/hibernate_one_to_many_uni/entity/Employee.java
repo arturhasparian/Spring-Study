@@ -1,6 +1,9 @@
 package hibernate_one_to_many_uni.entity;
 
+import lombok.Getter;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "employees")

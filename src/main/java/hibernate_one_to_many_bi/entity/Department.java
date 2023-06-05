@@ -1,5 +1,6 @@
 package hibernate_one_to_many_bi.entity;
 
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,17 +18,17 @@ public class Department {
     private int maxSalary;
     @Column(name = "min_salary")
     private int minSalary;
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}
-            , mappedBy = "department")
+    @OneToMany(cascade = CascadeType.ALL
+            , mappedBy = "department", fetch = FetchType.LAZY)
     private List<Employee> emps;
 
     public Department() {
     }
 
-    public Department(String departmentName, int maxSalary, int minSalary) {
+    public Department(String departmentName, int minSalary, int maxSalary) {
         this.departmentName = departmentName;
-        this.maxSalary = maxSalary;
         this.minSalary = minSalary;
+        this.maxSalary = maxSalary;
     }
 
     public void addEmployeeToDepartment(Employee employee) {

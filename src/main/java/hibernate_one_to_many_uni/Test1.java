@@ -36,15 +36,15 @@ public class Test1 {
 //            System.out.println(dep);
 //            System.out.println(dep.getEpms());
 
-            session = factory.getCurrentSession();
-
-            session.beginTransaction();
-            Department dep = session.get(Department.class,4);
-
-            session.delete(dep);
-
-            session.getTransaction().commit();
-            System.out.println("Done!");
+//            session = factory.getCurrentSession();
+//
+//            session.beginTransaction();
+//            Department dep = session.get(Department.class,4);
+//
+//            session.delete(dep);
+//
+//            session.getTransaction().commit();
+//            System.out.println("Done!");
 
         }
         finally {
