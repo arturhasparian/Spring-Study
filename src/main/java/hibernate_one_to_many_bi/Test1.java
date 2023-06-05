@@ -47,10 +47,15 @@ public class Test1 {
 //**********************************************************************
             session = factory.getCurrentSession();
             session.beginTransaction();
+            System.out.println("Get department");
             Department dep = session.get(Department.class,5);
+            System.out.println("Show Department");
             System.out.println(dep);
-            System.out.println(dep.getEmps());
+            System.out.println("Load all employee");
+            dep.getEmps().get(0);
             session.getTransaction().commit();
+            System.out.println("Show employee of the departments");
+            System.out.println(dep.getEmps());
             System.out.println("DONE!");
 //************************************************************************
 //            session = factory.getCurrentSession();
