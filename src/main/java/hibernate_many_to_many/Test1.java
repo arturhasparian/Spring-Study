@@ -82,7 +82,7 @@ public class Test1 {
 //            System.out.println("DONE!!!");
             session = factory.getCurrentSession();
             session.beginTransaction();
-            Child child = session.get(Child.class,5);
+            Child child = session.get(Child.class, 5);
             session.delete(child);
             session.getTransaction().commit();
             System.out.println("DONE!!!");
